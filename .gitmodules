@@ -1,0 +1,3 @@
+[submodule "livemark2"]
+	path = livemark2
+	url = https://github.com/miyakogi/livemark2
