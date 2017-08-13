@@ -1,7 +1,5 @@
 scriptencoding utf-8
 
-let s:root_dir = expand('<sfile>:p:h:h')
-let s:module_path = s:root_dir . '/livemark2/livemark2'
 let s:initialized_preview = 0
 let s:theme = ""
 
@@ -92,7 +90,7 @@ function! s:start_server() abort
     let l:options .= ' --highlight-theme "' . g:livemark_highlight_theme . '"'
   endif
 
-  let cmd = g:livemark_python . ' ' . s:module_path . l:options
+  let cmd = g:livemark_python . ' -m livemark2' . l:options
   let s:server_job = job_start(cmd)
 endfunction
 
