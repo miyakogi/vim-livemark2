@@ -1,5 +1,6 @@
 scriptencoding utf-8
 
+let s:pypath = expand('<sfile>:p:h:h') . '/livemark2'
 let s:initialized_preview = 0
 let s:theme = ""
 
@@ -90,8 +91,11 @@ function! s:start_server() abort
     let l:options .= ' --highlight-theme "' . g:livemark_highlight_theme . '"'
   endif
 
+  let old_pypath = $PYTHONPATH
+  let $PYTHONPATH = s:pypath . (len($PYTHONPATH) > 0 ? ':' . $PYTHONPATH : '' )
   let cmd = g:livemark_python . ' -m livemark2' . l:options
   let s:server_job = job_start(cmd)
+  let $PYTHONPATH = old_pypath
 endfunction
 
 function! s:stop_server() abort

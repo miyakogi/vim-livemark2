@@ -8,24 +8,26 @@ Real-time markdown preview plugin for vim.
 
 Latest Vim which has `+channel` and `+job` features.
 
-Python 3.5+ and [livemark2](https://github.com/miyakogi/livemark2) are also required to be installed in your python.
+Python 3.5+ and [wdom](https://github.com/miyakogi/wdom), [misaka](http://misaka.61924.nl/), and [pygments](http://pygments.org) are also required to be installed in your python.
 
 To install them:
 
 ```
-pip3 install -U git+https://github.com/miyakogi/livemark2
+pip3 install -U wdom misaka pygments
 ```
 
 Or,
 
 ```
-python3 -m pip intsall -U git+https://github.com/miyakogi/livemark2
+python3 -m pip intsall -U wdom misaka pygments
 ```
 
 ## Install
 
+When clone into your `pack/start`, need `--recurcive` option since this plugin includes git-submodule.
+
 ```
-git clone https://github.com/miyakogi/vim-livemark
+git clone --recurcive https://github.com/miyakogi/vim-livemark2
 ```
 
 ## Usage
